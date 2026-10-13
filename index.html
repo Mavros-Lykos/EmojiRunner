@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Emoji Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="hud">
+      <div id="hearts" class="hearts" aria-label="Hearts"></div>
+      <div class="meters">
+        <div class="chip water" id="waterChip">
+          <span id="waterLabel">WATER: 0/2</span>
+          <i class="bar"><b id="waterBar"></b></i>
+        </div>
+        <div class="chip energy" id="energyChip">
+          <span id="energyLabel">ENERGY: 0/2</span>
+          <i class="bar"><b id="energyBar"></b></i>
+        </div>
+      </div>
+      <div class="stats">
+        <span class="stat">SCORE <b id="score">0</b></span>
+        <span class="stat">BEST <b id="best">0</b></span>
+        <span class="stat" id="worldName">Emoji Meadow</span>
+      </div>
+      <div class="hud-actions">
+        <button type="button" id="btnPause" class="icon-btn" aria-label="Pause">II</button>
+        <button type="button" id="btnMute" class="icon-btn" aria-label="Mute">♪</button>
+      </div>
+    </header>
+
+    <div class="stage">
+      <canvas id="game"></canvas>
+      <div id="banner" class="banner" hidden></div>
+
+      <div id="overlay" class="overlay">
+        <div class="card" id="cardStart">
+          <h1>Emoji Runner</h1>
+          <p>Jump hazards, collect smiles, survive two-strike water and energy hits.</p>
+          <button type="button" id="btnPlay" class="btn">Play</button>
+        </div>
+        <div class="card" id="cardPause" hidden>
+          <h2>Paused</h2>
+          <button type="button" id="btnResume" class="btn">Resume</button>
+          <button type="button" id="btnRestartPause" class="btn ghost">Restart</button>
+        </div>
+        <div class="card" id="cardOver" hidden>
+          <h2>Game Over</h2>
+          <p>Score <b id="overScore">0</b> · Best <b id="overBest">0</b></p>
+          <button type="button" id="btnAgain" class="btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="touch">
+      <button type="button" id="btnJump" class="btn jump">Jump</button>
+    </footer>
+  </div>
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
